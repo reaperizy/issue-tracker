@@ -24,10 +24,6 @@ const links = [
             {links.map((link) => (
                 <Link 
                 key={link.href} 
-                
-                //menggunakan classnames
-                //fungsi classnames dibawah untuk menentukan warna link yang sedang aktif
-                //dan juga menyetel agar selalu dirender dengan 'true'
                 className={classnames({
                     'text-zinc-900' : link.href === currentPath,
                     'text-zinc-500' : link.href !== currentPath,
