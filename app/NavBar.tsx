@@ -24,7 +24,7 @@ const links = [
             {links.map((link) => (
                 <Link 
                 key={link.href} 
-                className='text-zinc-500 hover:text-zinc-800 transition-color' 
+                className={`${currentPath === link.href ? 'text-zinc-900' : 'text-zinc-500' } hover:text-zinc-800 transition-color`} 
                 href={link.href}>{link.label}</Link>
             ))}
             <li></li>
