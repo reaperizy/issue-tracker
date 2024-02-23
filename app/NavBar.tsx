@@ -1,11 +1,18 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { FaBug } from "react-icons/fa";
 
 const NavBar = () => {
+
+const currentPath = usePathname()
+console.log(currentPath)
+
 const links = [
-    { label : 'Dashboard', href: '/dashboard'},
+    { label : 'Dashboard', href: '/'},
     { label : 'Issues', href: '/issues'},
 ]
 
