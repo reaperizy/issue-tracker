@@ -1,2 +1,2 @@
 # issue-tracker
-the project that i have from mosh tutorials youtube
+the project that i have from mosh youtube tutorial
