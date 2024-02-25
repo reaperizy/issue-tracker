@@ -4,7 +4,9 @@ import React from 'react'
 import { Button, TextField, TextArea } from '@radix-ui/themes'
 import SimpleMDE from "react-simplemde-editor";
 import { useForm, Controller } from 'react-hook-form';
+import axios from 'axios';
 import "easymde/dist/easymde.min.css";
+import { useRouter } from 'next/navigation';
 
 interface IssueForm {
   title : string,
@@ -13,6 +15,7 @@ interface IssueForm {
 
 const NewIssuesPage = () => {
 
+  const router = useRouter()
   const {register, control, handleSubmit} = useForm<IssueForm>();
 
   //melihat props yang harus diterapkan ke kolom input
@@ -21,7 +24,10 @@ const NewIssuesPage = () => {
   return (
     <form 
       className='max-w-xl space-y-3' 
-      onSubmit={handleSubmit((data) => console.log(data))}>
+      onSubmit={handleSubmit(async (data) => {
+        await axios.post('/api/issues', data);
+        router.push('/issues');
+        })}>
         <TextField.Root>
             <TextField.Input placeholder='Title' {...register('title')}/>
         </TextField.Root>
