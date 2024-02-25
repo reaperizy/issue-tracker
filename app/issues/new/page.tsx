@@ -40,10 +40,9 @@ const NewIssuesPage = () => {
           <TextField.Root>
               <TextField.Input placeholder='Title' {...register('title')}/>
           </TextField.Root>
-          {errors.title && 
             <ErrorMessage>
-              {errors.title.message}
-            </ErrorMessage>}
+              {errors.title?.message}
+            </ErrorMessage>
           <Controller 
             name = "description"
             control={control}
