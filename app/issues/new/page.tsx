@@ -50,7 +50,7 @@ const NewIssuesPage = () => {
                 <SimpleMDE placeholder="Description" { ...field }/>
             )}
           />
-          {errors.description && <Text color='red' as='p'>{errors.description.message}</Text>}
+          <ErrorMessage>{errors.description?.message}</ErrorMessage>
           <Button >Submit New Issue</Button>
       </form>
     </div>
